@@ -1,4 +1,6 @@
 # Music Genre Classifier — Project Roadmap
+# save models with windows/linux then upload to Hugging Face, update `download_models.py` to match exact filenames, and update README with live demo link after deployment
+
 
 ## MoSCoW Prioritisation
 

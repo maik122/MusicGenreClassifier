@@ -8,9 +8,10 @@ os.makedirs(MODEL_DIR, exist_ok=True)
 
 # List of model filenames in your HuggingFace repo
 FILES = [
-    "random_forest_cp.pkl",
-    "scaler_cp.pkl",
-    "label_encoder_cp.pkl",
+    "random_forest.pkl",
+    "scaler.pkl",
+    "label_encoder.pkl",
+    "resnet50finetuned.keras"
 ]
 
 REPO_ID = "maik122/musicgenreclassifier-models"
