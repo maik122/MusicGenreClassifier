@@ -8,9 +8,10 @@ import matplotlib.patches as mpatches
 import numpy as np
 import librosa
 import librosa.display
-import download_models
 from src.predict import load_models, predict_genre
 from src.config import GENRES
+import download_models
+download_models.download_models_if_missing()
 
 
 # -------------------------------------------------------
