@@ -175,4 +175,5 @@ The CNN (ResNet50) only reaches ~20% accuracy because the spectrogram image data
 
 ## Author
 
-Built by **[Your Name](https://github.com/your-username)** as a portfolio project.
+> **Note:** Model files are not included in the repo due to size.
+> Run `notebooks/train.ipynb` to generate them before launching the app.
