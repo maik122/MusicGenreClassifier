@@ -3,14 +3,14 @@
 
 import numpy as np
 import librosa
-import joblib
+import cloudpickle
 # import keras
 from src.config import RF_PATH, SCALER_PATH, LE_PATH, CNN_PATH
 
 
 def load_models():
     """
-    Load all saved models and preprocessors from disk.
+    Load all saved models and preprocessors from disk using cloudpickle.
     Called once at Streamlit startup.
 
     Returns
@@ -18,12 +18,18 @@ def load_models():
     rf     : RandomForestClassifier
     scaler : StandardScaler
     le     : LabelEncoder
-    cnn    : Keras Model
+    cnn    : Keras Model (optional)
     """
-    rf     = joblib.load(RF_PATH)
-    scaler = joblib.load(SCALER_PATH)
-    le     = joblib.load(LE_PATH)
-   # cnn    = keras.models.load_model(CNN_PATH)
+    with open(RF_PATH, "rb") as f:
+        rf = cloudpickle.load(f)
+
+    with open(SCALER_PATH, "rb") as f:
+        scaler = cloudpickle.load(f)
+
+    with open(LE_PATH, "rb") as f:
+        le = cloudpickle.load(f)
+
+    # cnn = keras.models.load_model(CNN_PATH)
     return rf, scaler, le
 
 
